@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node-dev src/index.ts --watch",
     "test": "jest --watchAll --no-cache --runInBand",
-    "test-ci": "jest"
+    "test:ci": "jest"
   },
   "jest": {
     "preset": "ts-jest",
