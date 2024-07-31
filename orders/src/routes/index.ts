@@ -14,7 +14,7 @@ router.get("/api/orders", requireAuth, async (req: Request, res: Response) => {
     userId: req.currentUser!.id,
   }).populate("ticket");
 
-  res.send({ orders });
+  res.send(orders);
 });
 
 export { router as indexOrderRouter };
