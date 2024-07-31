@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: client
+          # image: us.gcr.io/tangential-span-423613-v3/ticketing-client
+          image: juanbevilacqua/ticketing-client
+          # env: # Environment variables
+          #   - name: REACT_APP_BACKEND_URL
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: client-secret
+          #         key: REACT_APP_BACKEND_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-srv
+spec:
+  selector:
+    app: client
+  ports:
+    - name: client
+      protocol: TCP
+      port: 3000 # Port that the service will listen on
+      targetPort: 3000 # Port that the service will forward to
