@@ -31,9 +31,9 @@ it("deletes order of a particular user", async () => {
     .get("/api/orders")
     .set("Cookie", userOne)
     .expect(200);
-  expect(body.orders.length).toEqual(1);
-  expect(body.orders[0].id).toEqual(orderOne.id);
-  expect(body.orders[0].status).toEqual(OrderStatus.Cancelled);
+  expect(body.length).toEqual(1);
+  expect(body[0].id).toEqual(orderOne.id);
+  expect(body[0].status).toEqual(OrderStatus.Cancelled);
 });
 
 it("returns 404 if order is not found", async () => {
