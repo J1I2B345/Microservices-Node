@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: juanbevilacqua/auth
+          image: juanbevilacqua/ticketing-auth
           env: # Environment variables
             - name: JWT_KEY
               valueFrom:
