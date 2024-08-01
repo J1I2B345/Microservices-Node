@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
         - name: expiration
-          # image: us.gcr.io/tangential-span-423613-v3/expiration
           image: juanbevilacqua/ticketing-expiration
           env: # Environment variables
             - name: NATS_URL

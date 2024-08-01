@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
         - name: auth
-          # image: us.gcr.io/tangential-span-423613-v3/auth
           image: juanbevilacqua/auth
           env: # Environment variables
             - name: JWT_KEY

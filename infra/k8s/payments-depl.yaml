@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
         - name: payments
-          # image: us.gcr.io/tangential-span-423613-v3/tickets
           image: juanbevilacqua/ticketing-payments
           env: # Environment variables
             - name: JWT_KEY

@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
         - name: orders
-          # image: us.gcr.io/tangential-span-423613-v3/tickets
           image: juanbevilacqua/ticketing-orders
           env: # Environment variables
             - name: JWT_KEY
