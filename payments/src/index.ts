@@ -5,6 +5,8 @@ import { OrderCancelledListener } from "./event/listener/order-cancelled-listene
 import { OrderCreatedListener } from "./event/listener/order-created-listener";
 
 const start = async () => {
+  console.log("testing workflow");
+
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY must be defined");
   }
@@ -39,8 +41,8 @@ const start = async () => {
     process.on("SIGINT", () => natsWrapper.client.close());
     process.on("SIGTERM", () => natsWrapper.client.close());
 
-    new OrderCreatedListener(natsWrapper.client).listen()
-    new OrderCancelledListener(natsWrapper.client).listen()
+    new OrderCreatedListener(natsWrapper.client).listen();
+    new OrderCancelledListener(natsWrapper.client).listen();
 
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to MongoDB");
