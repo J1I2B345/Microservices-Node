@@ -5,10 +5,7 @@ metadata:
 build:
   local:
     push: false
-  # googleCloudBuild:
-  # projectId: tangential-span-423613-v3
   artifacts:
-    # - image: us.gcr.io/tangential-span-423613-v3/auth
     - image: juanbevilacqua/auth
       context: auth
       docker:
@@ -17,7 +14,6 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: "."
-    # - image: us.gcr.io/tangential-span-423613-v3/auth
     - image: juanbevilacqua/ticketing-client
       context: client
       docker:
@@ -61,3 +57,4 @@ build:
 manifests:
   rawYaml:
     - infra/k8s/*
+    - infra/k8s-dev/*
